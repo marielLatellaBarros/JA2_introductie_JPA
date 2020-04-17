@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+/** One-to-Many relationship
+ * Many students are in one school
+ */
 @Entity
 public class Student {
 	@Id

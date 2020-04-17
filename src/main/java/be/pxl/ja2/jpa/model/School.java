@@ -10,6 +10,9 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+/** One-to-Many relationship
+ * One school has many students
+ */
 @Entity
 @NamedQueries(@NamedQuery(name="getSchoolByName", query = "SELECT s FROM School s WHERE s.name = :name"))
 public class School {

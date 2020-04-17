@@ -32,7 +32,7 @@ public class Opdracht3SavePerson {
 			person.setMarried(true);
 			person.setPicture(getImage(Paths.get("src/main/resources/avatar.jpg")));
 			person.setGender(Gender.M);
-			person.setComment("Sheldon Lee Cooper Ph.D., Sc.D., is a fictional character in the CBS television series The Big Bang Theory and its spinoff series Young Sheldon, portrayed by actors Jim Parsons in The Big Bang Theory and Iain Armitage in Young Sheldon (with Parsons as the latter series' narrator).[7] For his portrayal, Parsons has won four Primetime Emmy Awards, a Golden Globe Award, a TCA Award, and two Critics' Choice Television Awards. The character's childhood is the focus of Young Sheldon: the series' first season is set in 1989 when nine-year-old prodigy Sheldon has skipped ahead five grades, to start high school alongside his older brother.");
+			person.setComment("Sheldon Lee Cooper Ph.D., Sc.D., is a fictional character in the CBS television series The Big Bang Theory and its spin-off series Young Sheldon, portrayed by actors Jim Parsons in The Big Bang Theory and Iain Armitage in Young Sheldon (with Parsons as the latter series' narrator).[7] For his portrayal, Parsons has won four Primetime Emmy Awards, a Golden Globe Award, a TCA Award, and two Critics' Choice Television Awards. The character's childhood is the focus of Young Sheldon: the series' first season is set in 1989 when nine-year-old prodigy Sheldon has skipped ahead five grades, to start high school alongside his older brother.");
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
 			entityManager.persist(person);

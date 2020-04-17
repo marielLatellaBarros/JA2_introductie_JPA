@@ -21,6 +21,7 @@ public class Person {
 	private Gender gender;
 	@Lob
 	private byte[] picture;
+	@Column( columnDefinition ="LONGTEXT" )
 	private String comment;
 	private boolean married;
 	private String token;

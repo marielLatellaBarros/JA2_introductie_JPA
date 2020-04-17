@@ -14,7 +14,13 @@ import java.util.List;
  * One school has many students
  */
 @Entity
-@NamedQueries(@NamedQuery(name="getSchoolByName", query = "SELECT s FROM School s WHERE s.name = :name"))
+@NamedQueries({
+		@NamedQuery(name="getSchoolByName",
+				query = "SELECT s FROM School s WHERE s.name = :name"),
+		@NamedQuery(name="getSchoolByNameCount",
+				query = "SELECT count(s) FROM School s WHERE s.name = :name")
+})
+
 public class School {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

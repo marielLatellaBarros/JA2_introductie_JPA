@@ -29,10 +29,13 @@ public class Demo6RelationsManyToOne {
 
 			entityManager.clear();
 
-			TypedQuery<School> query = entityManager.createNamedQuery("getSchoolByName", School.class);
+			//TypedQuery<School> query = entityManager.createNamedQuery("getSchoolByName", School.class);
+			TypedQuery<Long> query = entityManager.createNamedQuery("getSchoolByNameCount", Long.class);
 			query.setParameter("name", "PXL");
-			School result = query.getSingleResult();
-			System.out.println("Number of students: " + result.getStudents().size());
+			//School result = query.getSingleResult();
+			Long result = query.getSingleResult();
+			System.out.println("Number of students: " + result);
+			
 		} finally {
 			if (entityManager != null) {
 				entityManager.close();

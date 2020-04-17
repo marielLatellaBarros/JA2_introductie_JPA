@@ -5,7 +5,7 @@ import java.time.LocalDate;
 @Entity
 //TODO: what is indexes and uniqueConstraints?
 @Table(name = "PERSONS",
-		uniqueConstraints = {@UniqueConstraint(columnNames = "firstName")},
+		uniqueConstraints = {@UniqueConstraint(columnNames = "FIRST_NAME")},
 		indexes = {@Index(name = "LAST_NAME_INDEX",
 columnList = "LAST_NAME")})
 public class Person {

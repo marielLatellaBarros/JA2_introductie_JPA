@@ -6,9 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+/** Many-to-Many relationship
+ * Many readers read many magazines
+ */
 @Entity
 public class Reader {
 	@Id
@@ -19,7 +22,7 @@ public class Reader {
 	private String name;
 
 	@ManyToMany
-	private List<Magazine> magazineList = new ArrayList<>();
+	private Set<Magazine> magazines = new HashSet<>();
 
 	public Reader() {
 		// JPA only
@@ -35,7 +38,7 @@ public class Reader {
 	}
 
 	public void addMagazine(Magazine magazine) {
-		magazineList.add(magazine);
+		magazines.add(magazine);
 	}
 
 	public String getName() {
@@ -46,7 +49,7 @@ public class Reader {
 	public String toString() {
 		StringBuilder result = new StringBuilder();
 		result.append(name).append(" READS ").append("\n");
-		magazineList.stream().forEach(m -> result.append(m).append("\n"));
+		magazines.stream().forEach(m -> result.append(m).append("\n"));
 		return result.toString();
 	}
 }

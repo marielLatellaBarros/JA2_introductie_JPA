@@ -19,7 +19,7 @@ public class Opdracht4GetPerson {
 			entityManager = entityManagerFactory.createEntityManager();
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
-			Person person = entityManager.find(Person.class, 3l);
+			Person person = entityManager.find(Person.class, 6l);
 			System.out.println(person.getFirstName());
 			System.out.println(person.getComment());
 			System.out.println(person.getToken());

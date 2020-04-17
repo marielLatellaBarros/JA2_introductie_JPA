@@ -1,13 +1,26 @@
 package be.pxl.ja2.jpa.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
+//TODO: what is indexes and uniqueConstraints?
+@Table(name = "PERSONS",
+		uniqueConstraints = {@UniqueConstraint(columnNames = "firstName")},
+		indexes = {@Index(name = "LAST_NAME_INDEX",
+columnList = "LAST_NAME")})
 public class Person {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Column(name = "FIRST_NAME")
 	private String firstName;
+	@Column(name = "LAST_NAME")
 	private String lastName;
+	@Temporal(TemporalType.DATE)
 	private LocalDate birthday;
+	@Enumerated(EnumType.STRING)
 	private Gender gender;
+	@Lob
 	private byte[] picture;
 	private String comment;
 	private boolean married;

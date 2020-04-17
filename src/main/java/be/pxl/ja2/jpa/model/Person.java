@@ -16,7 +16,6 @@ public class Person {
 	private String firstName;
 	@Column(name = "LAST_NAME")
 	private String lastName;
-	@Temporal(TemporalType.DATE)
 	private LocalDate birthday;
 	@Enumerated(EnumType.STRING)
 	private Gender gender;

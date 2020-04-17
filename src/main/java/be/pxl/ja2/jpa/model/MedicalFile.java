@@ -1,10 +1,9 @@
 package be.pxl.ja2.jpa.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+/**One-to-one relationship: bidirectional
+ */
 @Entity
 public class MedicalFile {
 	@Id
@@ -12,6 +11,8 @@ public class MedicalFile {
 	private Long id;
 	private double weight;
 	private int height;
+	@OneToOne(mappedBy = "medicalFile")
+	private Patient patient;
 
 	public Long getId() {
 		return id;
@@ -31,5 +32,13 @@ public class MedicalFile {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 }

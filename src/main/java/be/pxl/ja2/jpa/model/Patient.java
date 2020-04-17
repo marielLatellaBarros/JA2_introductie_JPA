@@ -1,13 +1,9 @@
 package be.pxl.ja2.jpa.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+/**One-to-one relationship: bidirectional
+ */
 @Entity
 public class Patient {
 	@Id
@@ -15,7 +11,11 @@ public class Patient {
 	private Long id;
 	@Column(length = 40, nullable = false)
 	private String name;
-	@OneToOne(cascade = CascadeType.ALL)
+	/**
+	 * One patient has one and only one medical file
+	 * A medical file belongs to one patient
+	 */
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private MedicalFile medicalFile;
 
 	public Long getId() {

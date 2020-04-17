@@ -7,7 +7,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-
+/** Demo3:
+ *  Use entityManager to update a contact and persist it in the database within a transaction
+ *  Close connections
+ */
 public class Demo3Update {
 	public static void main(String[] args) {
 

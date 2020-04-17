@@ -7,6 +7,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+/** Demo4:
+ * Use EntityManager to find a message by Id, within a transaction, and remove it => commit!
+ * Use a second EntityManager to check what happened in the database with the transactions executed
+ */
 public class Demo4EntityManager {
 	private static final EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("musicdb_pu");
 	private static final long MESSAGE_ID = 100L;
